@@ -14,7 +14,9 @@ import { SetLocationPage } from '../pages/set-location/set-location';
 import { AgmCoreModule } from '@agm/core';
 import { Geolocation } from '@ionic-native/geolocation';
 import { Camera } from '@ionic-native/camera';
+import { File } from '@ionic-native/file';
 import { PlaceService } from '../services/places';
+import { IonicStorageModule } from '@ionic/storage';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,7 @@ import { PlaceService } from '../services/places';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot(),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyASGDhDddks3NEF8Wy2HOGsoYYT98wOeCk'
     })
@@ -44,6 +47,7 @@ import { PlaceService } from '../services/places';
     SplashScreen,
     Geolocation,
     Camera,
+    File,
     PlaceService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
